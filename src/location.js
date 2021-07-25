@@ -8,7 +8,6 @@ function App() {
     const { value } = e.target;
     setValue(value);
     console.log(ZipCode.lookup(value))
-
     setData(ZipCode.lookup(value))
   };
   return (
@@ -20,7 +19,6 @@ function App() {
               />
         <p>City:{data?.city}</p>
         <p>State:{data?.state}</p>
-
     </div>
   );
 }
