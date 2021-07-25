@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Date from'./date'
+import {useState} from "react"
+import Location from "./location"
 function App() {
+  const [showResults, setShowResults] = useState(false)
+  const click = (item) => setShowResults(item)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Location/>
+      <button onClick={()=> click("date")}>date</button>
+      { showResults === "date" ? <Date/> : null}
     </div>
   );
 }
